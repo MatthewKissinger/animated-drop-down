@@ -2,13 +2,10 @@
 
 ## in the HTML you need to provide the following:
 
-<ul class="drop-wrapper">
-  <li class="drop-btn">Name of Button
-    <ul class="drop-menu">
-      <li>Name of menu tabs</li>
-    </ul>
-  </li>
-</ul>
+- ul tag with the class "drop-wrapper"
+  - li tag with the class "drop-btn"
+    - ul tag with the class "drop-menu"
+      - li tags with the drop tabs you need
 
 ## to link the css into your index.css file
 
@@ -18,6 +15,6 @@
 
 import { dropDownOnClick } from './dropDown.js';
 
-## call the drop-down module once in your index.js file
+## call the drop-down module once in your index.js
 
 dropDownOnClick;
