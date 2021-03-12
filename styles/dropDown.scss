@@ -1,0 +1,127 @@
+// place this 'starter styling' in the README.md
+
+ul,
+li {
+  list-style: none;
+}
+
+.drop-wrapper {
+  width: 450px;
+  margin: 0 auto;
+  margin-top: 100px;
+  text-align: center;
+  list-style: none;
+  display: flex;
+  background: #ddd;
+  border-radius: 5px;
+  > li {
+    width: 150px;
+    height: 65px;
+    line-height: 65px;
+    cursor: pointer;
+    position: relative;
+    color: rgba(0, 0, 0, 0.7);
+    &:hover {
+      background: #d5d5d5;
+      border-radius: 5px;
+    }
+  }
+}
+
+ul.drop-menu {
+  visibility: hidden;
+  > li {
+    list-style: none;
+    background: #666;
+    color: rgba(255, 255, 255, 0.7);
+    &:hover {
+      background: #606060;
+      border-radius: 0px;
+    }
+    &:last-child {
+      border-radius: 0px 0px 5px 5px;
+    }
+  }
+}
+
+// Default Trigger
+
+// Drop down fadeout class when clicking away
+ul.drop-menu.faded {
+  perspective: 1000px;
+  opacity: 1;
+  animation-name: fadeOut;
+  animation-duration: 400ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+// Menu reveal by click event
+
+ul.drop-menu.clicked {
+  perspective: 1000px;
+  li {
+    opacity: 0;
+    transform-origin: top center;
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        animation-name: showMenu;
+        animation-duration: 300ms;
+        animation-delay: (150ms * $i) - 300;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
+@keyframes showMenu {
+  0% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  60% {
+    opacity: 0.5;
+    transform: rotateX(45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+// Menu reveal by hover
+
+// // Show
+// li.drop-btn:hover > ul.drop-menu {
+//   visibility: visible;
+// }
+
+// li.drop-btn:hover > ul.drop-menu {
+//   perspective: 1000px;
+//   li {
+//     opacity: 0;
+//     transform-origin: top right;
+
+//     @for $i from 1 through 6 {
+//       &:nth-child(#{$i}) {
+//         animation-name: showMenu;
+//         animation-duration: 300ms;
+//         animation-delay: (150ms * $i) - 300;
+//         animation-timing-function: ease-in-out;
+//         animation-fill-mode: forwards;
+//       }
+//     }
+//   }
+// }
