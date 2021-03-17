@@ -2,12 +2,22 @@
 
 ## Installation
 
+On the command line...
+
 `npm i top-dropdown-menu`
+
+In your index.js file
 
 ```
 import { dropDownOnClick } from './dropDown.js';
 // calling the dropDown module
 dropDownOnClick;
+```
+
+In your index.css file
+
+```
+@import '/styles/dropDown.css';
 ```
 
 ## in the HTML you need to provide the following:
