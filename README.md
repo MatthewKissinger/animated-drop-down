@@ -1,5 +1,15 @@
 ## Animated drop-down menu
 
+## Installation
+
+`npm i top-dropdown-menu`
+
+```
+import { dropDownOnClick } from './dropDown.js';
+// calling the dropDown module
+dropDownOnClick;
+```
+
 ## in the HTML you need to provide the following:
 
 - ul tag with the class "drop-wrapper"
